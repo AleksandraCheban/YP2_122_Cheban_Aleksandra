@@ -24,5 +24,30 @@ namespace YP2_122_Cheban_Aleksandra
         {
             InitializeComponent();
         }
+
+        private void ButtonEnter_OnClick(object sender, RoutedEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(TextBoxLogin.Text) || string.IsNullOrEmpty(PasswordBox.Password))
+            {
+                MessageBox.Show("Введите логин или пароль");
+                return;
+            }
+            using (var db = new Entities())
+            {
+                var user = db.Users
+                .AsNoTracking()
+                .FirstOrDefault(u => u.Login == TextBoxLogin.Text && u.Password == hashedPassword);
+                if (user == null)
+                {
+                    MessageBox.Show("Пользователь с такими данными не  найден!");
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь успешно найден!");
+                    NavigationService?.Navigate(new MainPage());
+                }
+            }
+        }
     }
 }

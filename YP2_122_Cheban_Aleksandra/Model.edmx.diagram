@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81d0e509e94a42eebda854b575f33b88" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Ad_description" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ad_post_date" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ad_status" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ad_title" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Ad_type" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ads_data" Width="1.5" PointX="7.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Category" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.City" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User_login" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User_password" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ads_data_Ad_description" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_Ad_post_date" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_Ad_status" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_Ad_title" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_Ad_type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_City" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_User_login1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ads_data_User_password" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
