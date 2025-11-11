@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style
+TargetType="Button">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Margin" Value="12"/>
+        <Setter Property="FontFamily" Value="Tahoma"/>
+        <Setter Property="FontSize" Value="12pt"/>
+        <Setter Property="Background" Value="#FFFF9C1A"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#37474F"/>
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#78909C"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#FFFF9C1A"/>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FFFFFF"/>
+</ResourceDictionary>
