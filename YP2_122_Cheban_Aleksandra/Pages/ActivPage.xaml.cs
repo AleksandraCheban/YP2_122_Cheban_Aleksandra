@@ -24,8 +24,8 @@ namespace YP2_122_Cheban_Aleksandra
         public ActivPage()
         {
             InitializeComponent();
-            var currentUsers = Entities.GetContext().ads_data.ToList();
-            ListUser.ItemsSource = currentUsers;
+            var currentAds = Entities.GetContext().ads_data.ToList();
+            ListUser.ItemsSource = currentAds;
         }
 
         private void clearFiltersButton_Click_1(object sender, RoutedEventArgs e)
@@ -55,14 +55,17 @@ TextChangedEventArgs e)
             try
             {
                 List<ads_data> currentAds = Entities.GetContext().ads_data.ToList();
-                
+
+                // Фильтрация по названию товара через навигационное свойство Ad_title1
                 if (!string.IsNullOrWhiteSpace(tovarFilterTextBox.Text))
                 {
                     currentAds = currentAds.Where(x =>
-                   x.ad_title.ToString().ToLower().Contains(tovarFilterTextBox.Text.ToLower())).ToList();
+                       x.Ad_title1 != null && // проверяем что навигационное свойство не null
+                       x.Ad_title1.ad_title1 != null && // проверяем что строка не null
+                       x.Ad_title1.ad_title1.ToLower().Contains(tovarFilterTextBox.Text.ToLower())).ToList();
                 }
 
-                //Фильтрация по убыванию/возрастанию 
+                // Сортировка по цене
                 switch (sortComboBox.SelectedIndex)
                 {
                     case 0: // По возрастанию цены (дешевле)
@@ -77,7 +80,7 @@ TextChangedEventArgs e)
                 }
 
                 ListUser.ItemsSource = currentAds;
-            
+
             }
             catch (Exception)
             {

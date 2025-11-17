@@ -24,5 +24,40 @@
             </ComboBox>
             <Button x:Name="clearFiltersButton" Content="Очистить фильтр"  VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,8,39,4"  Height="34" FontSize="10" Click="clearFiltersButton_Click_1"/>
         </WrapPanel>
+
+        <ListView Name="ListUser" Grid.Row="1"  
+HorizontalContentAlignment="Center"  
+ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"  
+HorizontalAlignment="Center">
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image Width="200" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center">
+                            <Image.Source>
+                                <Binding Path="Photo">
+                                    <Binding.TargetNullValue>
+                                        <BitmapImage UriSource="C:\Users\Aleksandra\source\repos\122_Chaban_Aleksandra\УП1\122_Chaban_Aleksandra\Images\user.jpg"/>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock VerticalAlignment="Center"  
+TextAlignment="Center" Width="200" Grid.Row="0" TextWrapping="Wrap"  Text="{Binding FIO}" HorizontalAlignment="Center" FontSize="18"  FontWeight="Bold"/>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Left"  Width="200" Grid.Row="2" HorizontalAlignment="Center" FontSize="18"  Text="{Binding Role}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
