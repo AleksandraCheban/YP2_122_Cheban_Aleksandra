@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Closing="Window_Closing"
         Title="ООО Сервис частных объявлений" Height="450" Width="800">
-    <Grid Background="White">
+    <Grid Background="#FFF7F2E6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="89*"/>
             <ColumnDefinition Width="311*"/>

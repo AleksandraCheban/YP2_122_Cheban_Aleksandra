@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="81d0e509e94a42eebda854b575f33b88" Name="Diagram1">
+      <Diagram DiagramId="20972a1138b145c1854389555b3ddbf8" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Ad_description" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ad_post_date" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ad_status" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ad_title" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ad_type" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ads_data" Width="1.5" PointX="7.125" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ads_data" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Category" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.City" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User_login" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />

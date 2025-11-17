@@ -35,9 +35,11 @@ namespace YP2_122_Cheban_Aleksandra
             }
             using (var db = new Entities())
             {
-                var user = db.Users
-                .AsNoTracking()
-                .FirstOrDefault(u => u.Login == TextBoxLogin.Text && u.Password == hashedPassword);
+                var user = db.ads_data
+                            .AsNoTracking()
+                            .FirstOrDefault(u => u.User_login1.user_login1 == TextBoxLogin.Text &&
+                                                u.User_password1.user_password1 == PasswordBox.Password);
+
                 if (user == null)
                 {
                     MessageBox.Show("Пользователь с такими данными не  найден!");

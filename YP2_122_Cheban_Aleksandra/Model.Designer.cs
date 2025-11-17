@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\227104\source\repos\YP2_122_Cheban_Aleksandra\YP2_122_Cheban_Aleksandra\Model.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\227104\Source\Repos\YP2_122_Cheban_Aleksandra1\YP2_122_Cheban_Aleksandra\Model.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YP2_122_Cheban_Aleksandra.Pages;
 
 namespace YP2_122_Cheban_Aleksandra
 {
@@ -23,6 +24,19 @@ namespace YP2_122_Cheban_Aleksandra
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Btn_ClickActiv(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ActivPage());
+        }
+        private void Btn_ClicFinished(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FinishedPage());
+        }
+        private void Btn_ClicMy(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MyPage());
         }
     }
 }

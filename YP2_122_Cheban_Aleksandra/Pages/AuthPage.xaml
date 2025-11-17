@@ -24,6 +24,6 @@
             <Label Content="Пароль" x:Name="labelPass" Margin="178,187,0,0" HorizontalAlignment="Left" Width="64" />
             <PasswordBox x:Name="PasswordBox"  Background="Transparent"  ToolTip="Введите пароль"  Margin="0,0,333,0"  HorizontalAlignment="Right"  Width="134"  Height="32"  VerticalAlignment="Bottom"  Grid.Column="1"/>
 
-            <Button x:Name="ButtonEnter"  Margin="69,20,0,0"  Height="34"  Content="Вход"  ToolTip="Кнопка входа" Grid.Row="1"  HorizontalAlignment="Left"  Width="120"  VerticalAlignment="Top"  Grid.Column="1" />
+        <Button x:Name="ButtonEnter"  Margin="69,20,0,0"  Height="34"  Content="Вход"  ToolTip="Кнопка входа" Grid.Row="1"  HorizontalAlignment="Left"  Width="120"  VerticalAlignment="Top"  Grid.Column="1" Click="ButtonEnter_OnClick" />
         </Grid>
 </Page>
