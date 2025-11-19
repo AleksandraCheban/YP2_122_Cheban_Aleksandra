@@ -21,9 +21,11 @@ namespace YP2_122_Cheban_Aleksandra
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        private string _currentUserLogin;
+        public MainPage(string userLogin)
         {
             InitializeComponent();
+            _currentUserLogin = userLogin;
         }
 
         private void Btn_ClickActiv(object sender, RoutedEventArgs e)
@@ -36,7 +38,7 @@ namespace YP2_122_Cheban_Aleksandra
         }
         private void Btn_ClicMy(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MyPage());
+            NavigationService?.Navigate(new MyPage(_currentUserLogin));
         }
     }
 }

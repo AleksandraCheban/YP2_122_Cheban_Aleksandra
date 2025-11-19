@@ -12,9 +12,14 @@ namespace YP2_122_Cheban_Aleksandra
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Runtime.Remoting.Contexts;
+
     
+
     public partial class Entities : DbContext
     {
+        
+
         public Entities()
             : base("name=Entities")
         {

@@ -66,8 +66,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pages\ActivPage.xaml.cs">
-      <DependentUpon>ActivPage.xaml</DependentUpon>
+    <Compile Include="Pages\AddNewTovarPage.xaml.cs">
+      <DependentUpon>AddNewTovarPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ads_data.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -93,19 +93,29 @@
     <Compile Include="City.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FinishedPage.xaml.cs">
-      <DependentUpon>FinishedPage.xaml</DependentUpon>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ActivPage.xaml.cs">
+      <DependentUpon>ActivPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FinishedPage.xaml.cs">
+      <DependentUpon>FinishedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MyPage.xaml.cs">
       <DependentUpon>MyPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="User_login.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -113,6 +123,10 @@
     <Compile Include="User_password.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Page Include="Pages\AddNewTovarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ActivPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,16 +157,6 @@
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
@@ -207,6 +211,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Pages\Лого.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imageNotFind.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -217,7 +225,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="Pages\Лого.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

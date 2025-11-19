@@ -9,9 +9,9 @@
       Title="MainPage">
 
     <Grid>
-        <Button x:Name="BtnActiv" Content="Активные объявления"  HorizontalAlignment="Left" Margin="68,160,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="41" Width="181"  />
-        <Button x:Name="BtnFinished" Content="Завершенные объявления"  HorizontalAlignment="Left" Margin="68,230,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="42" Width="181"  />
-        <Button x:Name="BtnMy" Content="Мои объявления"  HorizontalAlignment="Left" Margin="68,307,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="43" Width="181"  />
+        <Button x:Name="BtnActiv" Content="Активные объявления"  HorizontalAlignment="Left" Margin="68,160,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="41" Width="181" Click="Btn_ClickActiv"  />
+        <Button x:Name="BtnFinished" Content="Завершенные объявления"  HorizontalAlignment="Left" Margin="68,230,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="42" Width="181" Click="Btn_ClicFinished" />
+        <Button x:Name="BtnMy" Content="Мои объявления"  HorizontalAlignment="Left" Margin="68,307,0,0" VerticalAlignment="Top"  RenderTransformOrigin="-1.326,0.371" Height="43" Width="181"  Click="Btn_ClicMy"/>
         <Image HorizontalAlignment="Right" Height="165" Margin="0,150,104,0" VerticalAlignment="Top" Width="159" Source="/Pages/Лого.png"/>
 
     </Grid>

@@ -1,0 +1,45 @@
+﻿<Page x:Class="YP2_122_Cheban_Aleksandra.AddNewTovarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YP2_122_Cheban_Aleksandra"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddNewTovarPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Название объявления" Grid.Row="0" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+        <TextBox x:Name="TBTitle" Grid.Row="0" Grid.Column="1" Margin="22" Text="{Binding ad_title}"/>
+        <TextBlock Text="Описание" Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+        <TextBox x:Name="TBDescription" Grid.Row="1" Grid.Column="1" Margin="22" Text="{Binding ad_description}" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <TextBlock Text="Цена" Grid.Row="2" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+        <TextBox x:Name="TBPrice" Grid.Row="2" Grid.Column="1" Margin="22" Text="{Binding price}"/>
+
+        <TextBlock Text="Город" Grid.Row="3" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+        <ComboBox x:Name="CBCity" Grid.Row="3" Grid.Column="1" Margin="22" SelectedValuePath="id" SelectedValue="{Binding city}"/>
+
+        <TextBlock Text="Категория" Grid.Row="4" Grid.Column="0" FontSize="16" VerticalAlignment="Center" Margin="10"/>
+        <ComboBox x:Name="CBCategory" Grid.Row="4" Grid.Column="1" Margin="22" SelectedValuePath="id" SelectedValue="{Binding category}"/>
+
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="ButtonSave" Content="Сохранить"  Margin="10" Padding="20,10" Height="42" Click="BtSave_Click"/>
+            <Button x:Name="ButtonClean" Content="Очистить"  Margin="10" Padding="20,10" Height="42" Click="ButtonClean_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

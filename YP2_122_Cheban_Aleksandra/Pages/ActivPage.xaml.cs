@@ -24,8 +24,35 @@ namespace YP2_122_Cheban_Aleksandra
         public ActivPage()
         {
             InitializeComponent();
-            var currentAds = Entities.GetContext().ads_data.ToList();
-            ListUser.ItemsSource = currentAds;
+            LoadAdsData();
+        }
+
+        private void LoadAdsData()
+        {
+            try
+            {
+                using (var db = new Entities())
+                {
+                    var currentAds = db.ads_data
+                        .Include("Ad_title1")
+                        .Include("User_login1")
+                        .Include("Ad_description1")
+                        .Include("Ad_post_date1")
+                        .Include("City1")
+                        .Include("Category1")
+                        .Include("Ad_type1")
+                        .Include("Ad_status1")
+                        .Where(x => x.Ad_status1 != null &&
+                                   x.Ad_status1.ad_status1.ToLower() == "активно")
+                        .ToList();
+
+                    ListActiv.ItemsSource = currentAds;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке данных: {ex.Message}");
+            }
         }
 
         private void clearFiltersButton_Click_1(object sender, RoutedEventArgs e)
@@ -34,17 +61,20 @@ namespace YP2_122_Cheban_Aleksandra
             sortComboBox.SelectedIndex = 0;
         }
 
-        private void tovarFilterTextBox_TextChanged(object sender,
-TextChangedEventArgs e)
+        private void Clidk_Finished(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void tovarFilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             Update();
         }
+
         private void sortComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Update();
         }
-
-
 
         private void Update()
         {
@@ -54,36 +84,51 @@ TextChangedEventArgs e)
             }
             try
             {
-                List<ads_data> currentAds = Entities.GetContext().ads_data.ToList();
-
-                // Фильтрация по названию товара через навигационное свойство Ad_title1
-                if (!string.IsNullOrWhiteSpace(tovarFilterTextBox.Text))
+                using (var db = new Entities())
                 {
-                    currentAds = currentAds.Where(x =>
-                       x.Ad_title1 != null && // проверяем что навигационное свойство не null
-                       x.Ad_title1.ad_title1 != null && // проверяем что строка не null
-                       x.Ad_title1.ad_title1.ToLower().Contains(tovarFilterTextBox.Text.ToLower())).ToList();
+                    List<ads_data> currentAds = db.ads_data
+                        .Include("Ad_title1")
+                        .Include("User_login1")
+                        .Include("Ad_description1")
+                        .Include("Ad_post_date1")
+                        .Include("City1")
+                        .Include("Category1")
+                        .Include("Ad_type1")
+                        .Include("Ad_status1")
+                        .Where(x => x.Ad_status1 != null &&
+                                   x.Ad_status1.ad_status1.ToLower() == "активно")
+                        .ToList();
+
+                    // Фильтрация по названию услуги через навигационное свойство Ad_title1
+                    if (!string.IsNullOrWhiteSpace(tovarFilterTextBox.Text))
+                    {
+                        currentAds = currentAds.Where(x =>
+                           x.Ad_title1 != null &&
+                           x.Ad_title1.ad_title1.ToLower().Contains(tovarFilterTextBox.Text.ToLower())).ToList();
+                    }
+
+                    // Сортировка по цене и фильтрация по статусу
+                    switch (sortComboBox.SelectedIndex)
+                    {
+                        case 0: 
+                            currentAds = currentAds.OrderByDescending(x => x.price).ToList();
+                            break;
+                        case 1: 
+                            currentAds = currentAds.OrderBy(x => x.price).ToList();
+                            break;
+                   
+                        default:
+                            currentAds = currentAds.OrderBy(x => x.price).ToList();
+                            break;
+                    }
+
+                    // Обновляем ListView вместо DataGrid
+                    ListActiv.ItemsSource = currentAds;
                 }
-
-                // Сортировка по цене
-                switch (sortComboBox.SelectedIndex)
-                {
-                    case 0: // По возрастанию цены (дешевле)
-                        currentAds = currentAds.OrderBy(x => x.price).ToList();
-                        break;
-                    case 1: // По убыванию цены (дороже)
-                        currentAds = currentAds.OrderByDescending(x => x.price).ToList();
-                        break;
-                    default:
-                        currentAds = currentAds.OrderBy(x => x.price).ToList();
-                        break;
-                }
-
-                ListUser.ItemsSource = currentAds;
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show($"Ошибка при обновлении данных: {ex.Message}");
             }
         }
     }

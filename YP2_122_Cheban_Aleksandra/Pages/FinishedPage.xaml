@@ -9,6 +9,69 @@
       Title="FinishedPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="Btfinish" Content="Вернуться назад"  VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,8,39,4"  Height="34" FontSize="10" Click="Clidk_Finished"/>
+            <TextBlock Text="Введите название услуги" FontSize="9"  VerticalAlignment="Center"/>
+            <TextBox x:Name="tovarFilterTextBox" Margin="7,7,0,7" MinWidth="100"  TextChanged="tovarFilterTextBox_TextChanged"/>
+            <TextBlock Text="Сортировка Ценам" Margin="10,0,0,0" FontSize="9"  VerticalAlignment="Center"/>
+            <ComboBox SelectionChanged="sortComboBox_SelectionChanged"  Margin="7,0,0,0" x:Name="sortComboBox" SelectedIndex="0"  VerticalContentAlignment="Center" VerticalAlignment="Center">
+                <ComboBoxItem Content="Дороже"/>
+                <ComboBoxItem Content="Дешевле"/>
+
+            </ComboBox>
+            <Button x:Name="clearFiltersButton" Content="Очистить фильтр"  VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5,8,39,4"  Height="34" FontSize="10" Click="clearFiltersButton_Click_1"/>
+        </WrapPanel>
+
+        <ListView Name="ListActiv" Grid.Row="1" 
+              HorizontalContentAlignment="Center" 
+              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightGray" BorderThickness="1" Margin="10" Padding="10" Width="300">
+                        <StackPanel>
+
+                            <Image Width="200" Height="150" Stretch="UniformToFill" HorizontalAlignment="Center">
+                                <Image.Source>
+                                    <BitmapImage UriSource="C:\Users\Aleksandra\Source\Repos\YP2_122_Cheban_Aleksandra\YP2_122_Cheban_Aleksandra\imageNotFind.png"/>
+                                </Image.Source>
+                            </Image>
+
+
+                            <TextBlock Text="{Binding Ad_title1.ad_title1}" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,5"/>
+
+
+                            <TextBlock Text="{Binding Ad_description1.ad_description1}" FontSize="12" TextWrapping="Wrap" Margin="0,0,0,5" MaxHeight="60" TextTrimming="CharacterEllipsis"/>
+
+                            <WrapPanel Margin="0,0,0,5">
+                                <TextBlock Text="{Binding City1.city1}" FontSize="11" Foreground="DarkBlue" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Category1.category1}" FontSize="11" Foreground="DarkGreen" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Ad_type1.ad_type1}" FontSize="11" Foreground="Purple"/>
+                            </WrapPanel>
+
+                            <WrapPanel Margin="0,0,0,5">
+                                <TextBlock Text="Статус:" FontSize="11" FontWeight="SemiBold" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Ad_status1.ad_status1}" FontSize="11" 
+                                       Foreground="{Binding Ad_status1.ad_status1}"/>
+                                <TextBlock Text="Дата:" FontSize="11" FontWeight="SemiBold" Margin="10,0,5,0"/>
+                                <TextBlock Text="{Binding Ad_post_date1.ad_post_date1, StringFormat={}{0:dd.MM.yyyy}}" FontSize="11"/>
+                            </WrapPanel>
+
+                            <TextBlock Text="{Binding price, StringFormat={}Цена: {0}₽}" FontSize="14" FontWeight="Bold" Foreground="Red" 
+                                   HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

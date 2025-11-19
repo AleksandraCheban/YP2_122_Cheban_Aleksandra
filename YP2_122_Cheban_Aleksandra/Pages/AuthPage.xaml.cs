@@ -20,9 +20,11 @@ namespace YP2_122_Cheban_Aleksandra
     /// </summary>
     public partial class AuthPage : Page
     {
+        
         public AuthPage()
         {
             InitializeComponent();
+            
         }
 
         private void ButtonEnter_OnClick(object sender, RoutedEventArgs e)
@@ -47,7 +49,8 @@ namespace YP2_122_Cheban_Aleksandra
                 else
                 {
                     MessageBox.Show("Пользователь успешно найден!");
-                    NavigationService?.Navigate(new MainPage());
+                    string userLogin = TextBoxLogin.Text;
+                    NavigationService?.Navigate(new MainPage(userLogin));
                 }
             }
         }
